@@ -2,9 +2,8 @@ package com.example.backend.assessment.model;
 
 import java.time.Instant;
 import java.util.Map;
-
-import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
-
+import org.hibernate.annotations.JdbcTypeCode; // NEW IMPORT
+import org.hibernate.type.SqlTypes; // NEW IMPORT
 import io.hypersistence.utils.hibernate.type.json.JsonType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -37,7 +36,7 @@ public class Event {
     @Column(name = "timestamp", nullable = false)
     private Instant timestamp;
     
-    @Type(JsonType.class)
+    @JdbcTypeCode(SqlTypes.JSON) 
     @Column(name = "payload", columnDefinition = "jsonb")
     private Map<String, Object> payload;
     

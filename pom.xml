@@ -115,8 +115,8 @@
 		<!-- Hibernate Types for JSONB -->
         <dependency>
             <groupId>io.hypersistence</groupId>
-            <artifactId>hypersistence-utils-hibernate-63</artifactId>
-            <version>3.7.0</version>
+            <artifactId>hypersistence-utils-hibernate-71</artifactId> 
+            <version>3.13.3</version>
         </dependency>
 	</dependencies>
 
