@@ -64,6 +64,20 @@ services:
     networks:
       - ingestion-network
 
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: backend-assessment-app
+    depends_on:
+      - kafka
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_PROFILES_ACTIVE: dev
+    networks:
+      - ingestion-network
+
 networks:
   ingestion-network:
     driver: bridge
